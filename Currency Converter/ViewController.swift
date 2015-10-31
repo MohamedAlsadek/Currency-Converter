@@ -13,9 +13,13 @@ class ViewController: UIViewController , MVSelectorScrollViewDelegate {
     @IBOutlet weak var textFieldNumber: UITextField!
     @IBOutlet weak var scrollViewCurrencies: MVSelectorScrollView!
     @IBOutlet var viewParent: UIView!
+    @IBOutlet weak var labelResult: UILabel!
+    let scrollViewValues = ["USD" , "GBP" , "EUR" , "CAD" , "JPY"]
+
     
     let currencyFormatter = NSNumberFormatter()
-
+    var selectedCurrancy = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,8 +45,8 @@ class ViewController: UIViewController , MVSelectorScrollViewDelegate {
     
     // MARK: Init UI
     func initUIElements () {
-        handleTextFieldFormatting()
         initScrollViewCurrencies ()
+        handleTextFieldFormatting()
     }
     
     // MARK: UITextField
@@ -56,14 +60,15 @@ class ViewController: UIViewController , MVSelectorScrollViewDelegate {
     }
     
     func textFieldDidChange(textField: UITextField) {
-        let text = textField.text!.stringByReplacingOccurrencesOfString(currencyFormatter.currencySymbol, withString: "").stringByReplacingOccurrencesOfString(currencyFormatter.groupingSeparator, withString: "").stringByReplacingOccurrencesOfString(currencyFormatter.decimalSeparator, withString: "")
-        textField.text = currencyFormatter.stringFromNumber((text as NSString).doubleValue / 100.0)
+        textField.text = currencyFormatter.stringFromNumber(Utilities.getDoubleValueFromCurrancyString(textField.text!))
+        
+        labelResult.text = Utilities.convertAUDto(scrollViewCurrencies.values[selectedCurrancy] as! String, amount: Utilities.getDoubleValueFromCurrancyString(textFieldNumber.text!))
+
     }
     
     // MARK: UIScrollView
     func initScrollViewCurrencies () {
         
-        let scrollViewValues = ["USD" , "GBP" , "EUR" , "CAD" , "JPY"]
         scrollViewCurrencies.values = scrollViewValues
         scrollViewCurrencies.delegate = self
         scrollViewCurrencies.updateIndexWhileScrolling = false;
@@ -71,6 +76,8 @@ class ViewController: UIViewController , MVSelectorScrollViewDelegate {
     
     func scrollView(scrollView: MVSelectorScrollView!, pageSelected: Int) {
         print(scrollView.values[pageSelected])
+        selectedCurrancy = pageSelected
+        labelResult.text = Utilities.convertAUDto(scrollView.values[pageSelected] as! String, amount: Utilities.getDoubleValueFromCurrancyString(textFieldNumber.text!))
     }
     
     

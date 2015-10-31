@@ -85,9 +85,19 @@
                                         <color key="textColor" red="0.19215686274509805" green="0.1803921568627451" blue="0.17647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="1e4-kq-Mcw">
+                                        <rect key="frame" x="37" y="473" width="303" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="FBl-eF-RQh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="56"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20392156862745098" green="0.78431372549019607" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1e4-kq-Mcw" secondAttribute="trailing" constant="35" id="0E9-qF-mN6"/>
                                     <constraint firstItem="1Hq-HV-e3L" firstAttribute="top" secondItem="ght-wi-Lv5" secondAttribute="bottom" constant="17" id="0ea-kc-ZEP"/>
                                     <constraint firstItem="suc-FX-m6x" firstAttribute="top" secondItem="eha-Bi-skB" secondAttribute="bottom" constant="63" id="645-mW-aEx"/>
                                     <constraint firstAttribute="trailing" secondItem="eha-Bi-skB" secondAttribute="trailing" constant="36" id="AUm-VL-k1V"/>
@@ -100,7 +110,9 @@
                                     <constraint firstItem="56q-dH-qgm" firstAttribute="centerX" secondItem="EoH-KE-riq" secondAttribute="centerX" constant="1" id="X87-fz-kR3"/>
                                     <constraint firstItem="9Yy-IV-ueX" firstAttribute="top" secondItem="EoH-KE-riq" secondAttribute="top" id="Xjn-mR-cWH"/>
                                     <constraint firstItem="9Yy-IV-ueX" firstAttribute="leading" secondItem="EoH-KE-riq" secondAttribute="leading" id="Zcg-cW-4gr"/>
+                                    <constraint firstItem="1e4-kq-Mcw" firstAttribute="leading" secondItem="EoH-KE-riq" secondAttribute="leading" constant="37" id="bd9-zp-HKI"/>
                                     <constraint firstItem="eha-Bi-skB" firstAttribute="leading" secondItem="EoH-KE-riq" secondAttribute="leading" constant="36" id="p7J-4z-B6z"/>
+                                    <constraint firstItem="1e4-kq-Mcw" firstAttribute="top" secondItem="suc-FX-m6x" secondAttribute="bottom" constant="26" id="pID-bG-dwd"/>
                                     <constraint firstItem="1Hq-HV-e3L" firstAttribute="leading" secondItem="EoH-KE-riq" secondAttribute="leading" constant="36" id="ueX-xB-S05"/>
                                     <constraint firstItem="56q-dH-qgm" firstAttribute="top" secondItem="EoH-KE-riq" secondAttribute="top" constant="48" id="vyz-hU-JLo"/>
                                     <constraint firstAttribute="trailing" secondItem="9Yy-IV-ueX" secondAttribute="trailing" id="xMT-lq-1gR"/>
@@ -118,6 +130,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="labelResult" destination="1e4-kq-Mcw" id="F9C-hC-Wxp"/>
                         <outlet property="scrollViewCurrencies" destination="er2-AO-0nx" id="kHx-2J-qqX"/>
                         <outlet property="textFieldNumber" destination="1Hq-HV-e3L" id="gPS-fT-cWR"/>
                         <outlet property="viewParent" destination="8bC-Xf-vdC" id="iaM-CL-m4k"/>
