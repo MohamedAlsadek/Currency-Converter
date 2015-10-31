@@ -18,6 +18,7 @@
 		4548434F1BE44D5E005E29B2 /* CurrencyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548434E1BE44D5E005E29B2 /* CurrencyParser.swift */; settings = {ASSET_TAGS = (); }; };
 		454843571BE45418005E29B2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454843561BE45418005E29B2 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		454843591BE45B35005E29B2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454843581BE45B35005E29B2 /* Utilities.swift */; settings = {ASSET_TAGS = (); }; };
+		4548435C1BE45EA1005E29B2 /* Desgin reference.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4548435B1BE45EA1005E29B2 /* Desgin reference.jpg */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		4548434E1BE44D5E005E29B2 /* CurrencyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyParser.swift; sourceTree = "<group>"; };
 		454843561BE45418005E29B2 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		454843581BE45B35005E29B2 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		4548435B1BE45EA1005E29B2 /* Desgin reference.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Desgin reference.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		4548431D1BE447D6005E29B2 /* Currency Converter */ = {
 			isa = PBXGroup;
 			children = (
+				4548435B1BE45EA1005E29B2 /* Desgin reference.jpg */,
 				4548431E1BE447D6005E29B2 /* AppDelegate.swift */,
 				4548435A1BE45B3B005E29B2 /* Utilities */,
 				454843521BE45184005E29B2 /* Constants */,
@@ -283,6 +286,7 @@
 				454843291BE447D6005E29B2 /* LaunchScreen.storyboard in Resources */,
 				454843261BE447D6005E29B2 /* Assets.xcassets in Resources */,
 				454843241BE447D6005E29B2 /* Main.storyboard in Resources */,
+				4548435C1BE45EA1005E29B2 /* Desgin reference.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

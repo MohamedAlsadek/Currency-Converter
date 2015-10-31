@@ -19,4 +19,12 @@ class Utilities: NSObject {
         
         vc.presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    class func currencyStringFromNumber(number: Double) -> String {
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        formatter.currencyCode = NSLocale.currentLocale().displayNameForKey(NSLocaleCurrencySymbol, value: NSLocaleCurrencyCode)
+        return formatter.stringFromNumber(number)!
+    }
+    
 }
