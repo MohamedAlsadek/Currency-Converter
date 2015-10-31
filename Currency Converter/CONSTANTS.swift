@@ -10,6 +10,6 @@ import UIKit
 
 class CONSTANTS: NSObject {
     struct URLS {
-        static let BASE_URL = "http://api.fixer.io/latest?base=AUD&symbols=CAD,EUR,GBP,JPY,USD"
+        static let BASE_URL = "https://api.fixer.io/latest?base=AUD&symbols=CAD,EUR,GBP,JPY,USD"
     }
 }
