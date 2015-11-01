@@ -19,12 +19,7 @@
 		454843571BE45418005E29B2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454843561BE45418005E29B2 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		454843591BE45B35005E29B2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454843581BE45B35005E29B2 /* Utilities.swift */; settings = {ASSET_TAGS = (); }; };
 		4548435C1BE45EA1005E29B2 /* Desgin reference.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4548435B1BE45EA1005E29B2 /* Desgin reference.jpg */; settings = {ASSET_TAGS = (); }; };
-		454843721BE50E19005E29B2 /* MVScrollerClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 454843711BE50E19005E29B2 /* MVScrollerClipView.m */; settings = {ASSET_TAGS = (); }; };
-		454843751BE50E29005E29B2 /* MVSelectorContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 454843741BE50E29005E29B2 /* MVSelectorContentView.m */; settings = {ASSET_TAGS = (); }; };
-		454843781BE50E30005E29B2 /* MVSelectorScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 454843771BE50E30005E29B2 /* MVSelectorScrollView.m */; settings = {ASSET_TAGS = (); }; };
-		4548437A1BE50E3B005E29B2 /* MVSelectorScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454843791BE50E3B005E29B2 /* MVSelectorScrollView.xib */; settings = {ASSET_TAGS = (); }; };
-		4548437D1BE50E42005E29B2 /* scroller_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4548437B1BE50E42005E29B2 /* scroller_bg@2x.png */; settings = {ASSET_TAGS = (); }; };
-		4548437E1BE50E42005E29B2 /* scroller_glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4548437C1BE50E42005E29B2 /* scroller_glass@2x.png */; settings = {ASSET_TAGS = (); }; };
+		4592AC361BE6CC4800FF835B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592AC351BE6CC4800FF835B /* ContentView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,15 +59,7 @@
 		454843581BE45B35005E29B2 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4548435B1BE45EA1005E29B2 /* Desgin reference.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Desgin reference.jpg"; sourceTree = "<group>"; };
 		4548436F1BE50E19005E29B2 /* Currency Converter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Currency Converter-Bridging-Header.h"; sourceTree = "<group>"; };
-		454843701BE50E19005E29B2 /* MVScrollerClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVScrollerClipView.h; sourceTree = "<group>"; };
-		454843711BE50E19005E29B2 /* MVScrollerClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVScrollerClipView.m; sourceTree = "<group>"; };
-		454843731BE50E29005E29B2 /* MVSelectorContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVSelectorContentView.h; sourceTree = "<group>"; };
-		454843741BE50E29005E29B2 /* MVSelectorContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVSelectorContentView.m; sourceTree = "<group>"; };
-		454843761BE50E30005E29B2 /* MVSelectorScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVSelectorScrollView.h; sourceTree = "<group>"; };
-		454843771BE50E30005E29B2 /* MVSelectorScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVSelectorScrollView.m; sourceTree = "<group>"; };
-		454843791BE50E3B005E29B2 /* MVSelectorScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MVSelectorScrollView.xib; sourceTree = "<group>"; };
-		4548437B1BE50E42005E29B2 /* scroller_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroller_bg@2x.png"; sourceTree = "<group>"; };
-		4548437C1BE50E42005E29B2 /* scroller_glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroller_glass@2x.png"; sourceTree = "<group>"; };
+		4592AC351BE6CC4800FF835B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				454843201BE447D6005E29B2 /* ViewController.swift */,
+				4592AC351BE6CC4800FF835B /* ContentView.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -182,7 +170,6 @@
 		454843551BE451B9005E29B2 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				4548437F1BE50EB9005E29B2 /* CustomScrollView */,
 				454843271BE447D6005E29B2 /* LaunchScreen.storyboard */,
 				4548432A1BE447D6005E29B2 /* Info.plist */,
 				4548436F1BE50E19005E29B2 /* Currency Converter-Bridging-Header.h */,
@@ -196,22 +183,6 @@
 				454843581BE45B35005E29B2 /* Utilities.swift */,
 			);
 			name = Utilities;
-			sourceTree = "<group>";
-		};
-		4548437F1BE50EB9005E29B2 /* CustomScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				454843701BE50E19005E29B2 /* MVScrollerClipView.h */,
-				454843711BE50E19005E29B2 /* MVScrollerClipView.m */,
-				454843731BE50E29005E29B2 /* MVSelectorContentView.h */,
-				454843741BE50E29005E29B2 /* MVSelectorContentView.m */,
-				454843761BE50E30005E29B2 /* MVSelectorScrollView.h */,
-				454843771BE50E30005E29B2 /* MVSelectorScrollView.m */,
-				454843791BE50E3B005E29B2 /* MVSelectorScrollView.xib */,
-				4548437B1BE50E42005E29B2 /* scroller_bg@2x.png */,
-				4548437C1BE50E42005E29B2 /* scroller_glass@2x.png */,
-			);
-			name = CustomScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,13 +289,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4548437E1BE50E42005E29B2 /* scroller_glass@2x.png in Resources */,
-				4548437A1BE50E3B005E29B2 /* MVSelectorScrollView.xib in Resources */,
 				454843291BE447D6005E29B2 /* LaunchScreen.storyboard in Resources */,
 				454843261BE447D6005E29B2 /* Assets.xcassets in Resources */,
 				454843241BE447D6005E29B2 /* Main.storyboard in Resources */,
 				4548435C1BE45EA1005E29B2 /* Desgin reference.jpg in Resources */,
-				4548437D1BE50E42005E29B2 /* scroller_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,12 +317,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				454843781BE50E30005E29B2 /* MVSelectorScrollView.m in Sources */,
 				454843591BE45B35005E29B2 /* Utilities.swift in Sources */,
 				454843211BE447D6005E29B2 /* ViewController.swift in Sources */,
 				4548434D1BE44B01005E29B2 /* CONSTANTS.swift in Sources */,
-				454843721BE50E19005E29B2 /* MVScrollerClipView.m in Sources */,
-				454843751BE50E29005E29B2 /* MVSelectorContentView.m in Sources */,
+				4592AC361BE6CC4800FF835B /* ContentView.swift in Sources */,
 				4548431F1BE447D6005E29B2 /* AppDelegate.swift in Sources */,
 				454843571BE45418005E29B2 /* SwiftyJSON.swift in Sources */,
 				4548434F1BE44D5E005E29B2 /* CurrencyParser.swift in Sources */,
@@ -504,7 +470,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Currency Converter/Currency Converter-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -518,7 +484,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.linkdev.Currency-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Currency Converter/Currency Converter-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -589,6 +555,7 @@
 				454843451BE447D6005E29B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		454843461BE447D6005E29B2 /* Build configuration list for PBXNativeTarget "Currency ConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -597,6 +564,7 @@
 				454843481BE447D6005E29B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		454843491BE447D6005E29B2 /* Build configuration list for PBXNativeTarget "Currency ConverterUITests" */ = {
 			isa = XCConfigurationList;
@@ -605,6 +573,7 @@
 				4548434B1BE447D6005E29B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
