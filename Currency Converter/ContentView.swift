@@ -24,7 +24,7 @@ class ContentView: NSObject {
     func initLabelWithText(title:String) {
         self.labelTitle = UILabel(frame: CGRectMake(0, 0, self.viewParent.frame.size.width, self.viewParent.frame.size.height))
         self.labelTitle.text = title;
-        self.labelTitle.font = UIFont(name: "Helvetica-Bold", size: 56.0)
+        self.labelTitle.font = CONSTANTS.FONTS.APP_FONT
         self.labelTitle.adjustsFontSizeToFitWidth = true
         self.labelTitle.textAlignment = NSTextAlignment.Center
         self.labelTitle.textColor = UIColor(white: 1.0, alpha: 0.3)

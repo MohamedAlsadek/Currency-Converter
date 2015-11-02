@@ -22,6 +22,7 @@ class ViewController: UIViewController , UITableViewDelegate , UIScrollViewDeleg
     var scrollViewContentViews : NSMutableArray = []
     var previousPage = 0
     
+    //Currancy Formatter
     let currencyFormatter = NSNumberFormatter()
     var selectedCurrancy = 0
     
@@ -46,7 +47,6 @@ class ViewController: UIViewController , UITableViewDelegate , UIScrollViewDeleg
             }
         }
     }
-    
     
     // MARK: Init UI
     func initUIElements () {
@@ -95,15 +95,25 @@ class ViewController: UIViewController , UITableViewDelegate , UIScrollViewDeleg
         //	Paging for each scroll view
         self.scrollView.pagingEnabled = true;
         self.scrollView.delegate = self ;
+        
         self.invisibleScrollView.pagingEnabled = true;
         self.invisibleScrollView.delegate = self;
+        self.invisibleScrollView.hidden = false;
         
+        addCurrencyViewsInScrollView()
+        setScrollViewsContentWidth()
+        
+        self.invisibleScrollView.userInteractionEnabled = false;
+        self.scrollView.addGestureRecognizer(self.invisibleScrollView.panGestureRecognizer)
+    }
+    
+    func addCurrencyViewsInScrollView() {
         //add elelements
         for i in 0 ..< scrollViewValues.count {
             
             let contentViewTemp = ContentView()
             contentViewTemp.initWithTitle(scrollViewValues[i] , frame: CGRectMake(CGFloat(i + 1) * self.view.frame.width/3, 0, self.view.frame.width/3, invisibleScrollView.frame.size.height))
-
+            
             self.scrollView.addSubview(contentViewTemp.viewParent)
             
             if i == 0 {
@@ -114,17 +124,12 @@ class ViewController: UIViewController , UITableViewDelegate , UIScrollViewDeleg
             //save it in main array , so i can keep track off them to change and update the views
             scrollViewContentViews.addObject(contentViewTemp)
         }
-        
-        let contentWidth = CGFloat(5) * (self.view.frame.size.width / 3)
+    }
+    
+    func setScrollViewsContentWidth() {
+        let contentWidth = CGFloat(scrollViewValues.count) * (self.view.frame.size.width / 3)
         self.scrollView.contentSize = CGSizeMake(contentWidth, 0);
         self.invisibleScrollView.contentSize = CGSizeMake(contentWidth, 0);
-        
-        self.invisibleScrollView.userInteractionEnabled = false;
-        self.scrollView.addGestureRecognizer(self.invisibleScrollView.panGestureRecognizer)
-        
-        self.invisibleScrollView.delegate = self;
-        self.invisibleScrollView.hidden = false;
-
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -177,12 +182,13 @@ class ViewController: UIViewController , UITableViewDelegate , UIScrollViewDeleg
         }
     }
     
+    /*
+    convert the entered value to the seleced currancy and display the result.
+    */
     func convertToCurrancyAtIndex(index : Int) {
-        print("convert to currrancy : \(index)")
-
+        
         selectedCurrancy = index
         labelResult.text = Utilities.convertAUDto(scrollViewValues[index] , amount: Utilities.getDoubleValueFromCurrancyString(textFieldNumber.text!))
-
     }
     
     // MARK: MemoryWarning
@@ -190,6 +196,5 @@ class ViewController: UIViewController , UITableViewDelegate , UIScrollViewDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
 

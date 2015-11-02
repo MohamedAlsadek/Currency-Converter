@@ -12,4 +12,7 @@ class CONSTANTS: NSObject {
     struct URLS {
         static let BASE_URL = "https://api.fixer.io/latest?base=AUD&symbols=CAD,EUR,GBP,JPY,USD"
     }
+    struct FONTS {
+        static let APP_FONT = UIFont(name: "Helvetica-Bold", size: 56.0)
+    }
 }
