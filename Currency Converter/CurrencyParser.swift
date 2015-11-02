@@ -27,7 +27,9 @@ class CurrencyParser: NSObject {
         
         let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                completion(data: data, HTTPStatusCode: (response as! NSHTTPURLResponse).statusCode, error: error)
+                if response != nil {
+                    completion(data: data, HTTPStatusCode: (response as! NSHTTPURLResponse).statusCode, error: error)
+                }
             })
         })
         

@@ -8,19 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController , UITableViewDelegate , UIScrollViewDelegate {
+class ViewController: UIViewController , ScrollViewDelegate //, UITableViewDelegate , UIScrollViewDelegate ,
+
+{
 
     @IBOutlet weak var textFieldNumber: UITextField!
     @IBOutlet var viewParent: UIView!
     @IBOutlet weak var labelResult: UILabel!
     let scrollViewValues = ["USD" , "GBP" , "EUR" , "CAD" , "JPY"]
-    
-    //Custom control - ScrollView
-    @IBOutlet weak var invisibleScrollView: UIScrollView!
-    @IBOutlet weak var scrollView: UIScrollView!
-    var currentPage = 0
-    var scrollViewContentViews : NSMutableArray = []
-    var previousPage = 0
     
     //Currancy Formatter
     let currencyFormatter = NSNumberFormatter()
@@ -53,7 +48,7 @@ class ViewController: UIViewController , UITableViewDelegate , UIScrollViewDeleg
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
 
-        initScrollViewCurrencies ()
+//        initScrollViewCurrencies ()
         handleTextFieldFormatting()
     }
     
@@ -77,7 +72,7 @@ class ViewController: UIViewController , UITableViewDelegate , UIScrollViewDeleg
         let textEntered = textField.text;
         let numberOfCharacters = textEntered?.characters.count
         
-        //just to limit the input to 20 characters .
+        // just to limit the input to 20 characters .
         if numberOfCharacters >= 19 {
             var myNSString =  NSString(string: textEntered!)
             myNSString = myNSString.substringWithRange(NSRange(location: 0, length: 19))
@@ -90,111 +85,33 @@ class ViewController: UIViewController , UITableViewDelegate , UIScrollViewDeleg
 
     }
     
-    // MARK: UIScrollView
-    func initScrollViewCurrencies () {
-        //	Paging for each scroll view
-        self.scrollView.pagingEnabled = true;
-        self.scrollView.delegate = self ;
-        
-        self.invisibleScrollView.pagingEnabled = true;
-        self.invisibleScrollView.delegate = self;
-        self.invisibleScrollView.hidden = false;
-        
-        addCurrencyViewsInScrollView()
-        setScrollViewsContentWidth()
-        
-        self.invisibleScrollView.userInteractionEnabled = false;
-        self.scrollView.addGestureRecognizer(self.invisibleScrollView.panGestureRecognizer)
-    }
-    
-    func addCurrencyViewsInScrollView() {
-        //add elelements
-        for i in 0 ..< scrollViewValues.count {
-            
-            let contentViewTemp = ContentView()
-            contentViewTemp.initWithTitle(scrollViewValues[i] , frame: CGRectMake(CGFloat(i + 1) * self.view.frame.width/3, 0, self.view.frame.width/3, invisibleScrollView.frame.size.height))
-            
-            self.scrollView.addSubview(contentViewTemp.viewParent)
-            
-            if i == 0 {
-                // set the first item selected by default
-                contentViewTemp.setThemeOnSelection(true)
-            }
-            
-            //save it in main array , so i can keep track off them to change and update the views
-            scrollViewContentViews.addObject(contentViewTemp)
-        }
-    }
-    
-    func setScrollViewsContentWidth() {
-        let contentWidth = CGFloat(scrollViewValues.count) * (self.view.frame.size.width / 3)
-        self.scrollView.contentSize = CGSizeMake(contentWidth, 0);
-        self.invisibleScrollView.contentSize = CGSizeMake(contentWidth, 0);
-    }
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if(invisibleScrollView != nil)
-        {
-            //	Forward the content offset from the overlay to our main scroll view
-            self.scrollView.contentOffset = self.invisibleScrollView.contentOffset;
-        }
-        
-        if (scrollView.contentOffset.x < 0.0) {
-            return
-        }
-        
-        let page = calculatePage(scrollView);
-        if previousPage != page {
-            
-            // Page has changed: update index, change hightlight, call delegate
-            if (page >= 0 && page < scrollViewContentViews.count) {
-                changeHighlightFrom(previousPage, newIndex: page)
-                previousPage = page;
-            }
-        }
-    }
-    
-    
-    func calculatePage (scrollView : UIScrollView) -> Int {
-        let fractionalPage = Double(scrollView.contentOffset.x / (self.view.frame.width/3));
-        var page = lround(fractionalPage);
+    // MARK: CustomControl Delegate
 
-        if page >= scrollViewContentViews.count {
-            page = scrollViewContentViews.count - 1;
-        }
-        if page < 0 {
-            page = 0
-        }
-        return page;
-    }
-    
-    
-    func changeHighlightFrom(oldIndex : Int ,newIndex : Int){
-        
-        if (oldIndex != newIndex) {
-            let tempContentViewNew  = scrollViewContentViews.objectAtIndex(newIndex) as! ContentView
-            tempContentViewNew.setThemeOnSelection(true)
-
-            let tempContentViewOld  = scrollViewContentViews.objectAtIndex(oldIndex) as! ContentView
-            tempContentViewOld.setThemeOnSelection(false)
-            
-            convertToCurrancyAtIndex(newIndex)
-        }
-    }
-    
-    /*
-    convert the entered value to the seleced currancy and display the result.
-    */
-    func convertToCurrancyAtIndex(index : Int) {
-        
+    // this function get called whenever the user change the selected currancy.
+    func selectedCurrancyInFilter(index: Int) {
         selectedCurrancy = index
         labelResult.text = Utilities.convertAUDto(scrollViewValues[index] , amount: Utilities.getDoubleValueFromCurrancyString(textFieldNumber.text!))
     }
+
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // All you have to do to intantiate the custom currancy picker control is to create a container and embed the currancy picker on it and send the data through segue and implement the delegate.
+        
+        if segue.identifier == "CustomControlSegue" {
+            let customControlView : CurrancyPickerViewController = segue.destinationViewController as! CurrancyPickerViewController
+            customControlView.delegate = self
+            customControlView.scrollViewValues = scrollViewValues
+        }
+    }
+    
     
     // MARK: MemoryWarning
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }
 

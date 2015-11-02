@@ -18,6 +18,8 @@
 		4548434F1BE44D5E005E29B2 /* CurrencyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548434E1BE44D5E005E29B2 /* CurrencyParser.swift */; settings = {ASSET_TAGS = (); }; };
 		454843571BE45418005E29B2 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454843561BE45418005E29B2 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		454843591BE45B35005E29B2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454843581BE45B35005E29B2 /* Utilities.swift */; settings = {ASSET_TAGS = (); }; };
+		457C1F091BE7D12E00C1BEB1 /* CurrancyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457C1F081BE7D12E00C1BEB1 /* CurrancyPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		457C1F0B1BE7D27500C1BEB1 /* ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457C1F0A1BE7D27500C1BEB1 /* ScrollViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		4592AC361BE6CC4800FF835B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592AC351BE6CC4800FF835B /* ContentView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		454843561BE45418005E29B2 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		454843581BE45B35005E29B2 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4548436F1BE50E19005E29B2 /* Currency Converter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Currency Converter-Bridging-Header.h"; sourceTree = "<group>"; };
+		457C1F081BE7D12E00C1BEB1 /* CurrancyPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrancyPickerViewController.swift; sourceTree = "<group>"; };
+		457C1F0A1BE7D27500C1BEB1 /* ScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewDelegate.swift; sourceTree = "<group>"; };
 		4592AC351BE6CC4800FF835B /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,8 +162,8 @@
 		454843541BE451A4005E29B2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				457C1F0C1BE7D88500C1BEB1 /* Currancy Picker */,
 				454843201BE447D6005E29B2 /* ViewController.swift */,
-				4592AC351BE6CC4800FF835B /* ContentView.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -180,6 +184,16 @@
 				454843581BE45B35005E29B2 /* Utilities.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		457C1F0C1BE7D88500C1BEB1 /* Currancy Picker */ = {
+			isa = PBXGroup;
+			children = (
+				4592AC351BE6CC4800FF835B /* ContentView.swift */,
+				457C1F0A1BE7D27500C1BEB1 /* ScrollViewDelegate.swift */,
+				457C1F081BE7D12E00C1BEB1 /* CurrancyPickerViewController.swift */,
+			);
+			name = "Currancy Picker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,8 +330,10 @@
 				454843591BE45B35005E29B2 /* Utilities.swift in Sources */,
 				454843211BE447D6005E29B2 /* ViewController.swift in Sources */,
 				4548434D1BE44B01005E29B2 /* CONSTANTS.swift in Sources */,
+				457C1F0B1BE7D27500C1BEB1 /* ScrollViewDelegate.swift in Sources */,
 				4592AC361BE6CC4800FF835B /* ContentView.swift in Sources */,
 				4548431F1BE447D6005E29B2 /* AppDelegate.swift in Sources */,
+				457C1F091BE7D12E00C1BEB1 /* CurrancyPickerViewController.swift in Sources */,
 				454843571BE45418005E29B2 /* SwiftyJSON.swift in Sources */,
 				4548434F1BE44D5E005E29B2 /* CurrencyParser.swift in Sources */,
 			);
