@@ -27,10 +27,22 @@ class Currency_ConverterUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
+    /*
+    - this test case check when the user change the input value of AUD and check if the result label value changed.
+    */
+    func testCase1() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let textField = XCUIApplication().childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.TextField).element
+        textField.tap()
+        textField.typeText("999")
+        
+        //if the result label still have the inital text $0.00 after changing the value to 999 this mean the test fail 
+        //if the value changed this mean it worked.
+        let StaticText = XCUIApplication().staticTexts["$0.00"]
+        assert(!StaticText.exists)
+        
     }
     
 }
